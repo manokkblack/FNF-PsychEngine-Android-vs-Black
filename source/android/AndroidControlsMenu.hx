@@ -23,7 +23,7 @@ class AndroidControlsMenu extends MusicBeatState
 	var inputvari:PsychAlphabet;
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
-	var controlitems:Array<String> = ['Pad-Right','Pad-Left','Pad-Custom','Duo','Hitbox','Keyboard'];
+	var controlitems:Array<String> = ['Controle-Destro','Controle-Canhoto','Controle-Customizado','Duplo','Hitbox','Controle'];
 	var curSelected:Int = 0;
 	var buttonistouched:Bool = false;
 	var bindbutton:FlxButton;
@@ -148,26 +148,26 @@ class AndroidControlsMenu extends MusicBeatState
 
 		switch (daChoice)
 		{
-				case 'Pad-Right':
+				case 'Controle-Destro':
 					remove(vpad);
 					vpad = new FlxVirtualPad(RIGHT_FULL, NONE, 0.75, ClientPrefs.globalAntialiasing);
 					add(vpad);
-				case 'Pad-Left':
+				case 'Controle-Canhoto':
 					remove(vpad);
 					vpad = new FlxVirtualPad(FULL, NONE, 0.75, ClientPrefs.globalAntialiasing);
 					add(vpad);
-				case 'Pad-Custom':
+				case 'Controle-Customizado':
 					remove(vpad);
 					vpad = new FlxVirtualPad(RIGHT_FULL, NONE, 0.75, ClientPrefs.globalAntialiasing);
 					add(vpad);
 					loadcustom();
-				case 'Duo':
+				case 'Duplo':
 					remove(vpad);
 					vpad = new FlxVirtualPad(DUO, NONE, 0.75, ClientPrefs.globalAntialiasing);
 					add(vpad);
 				case 'Hitbox':
 					vpad.alpha = 0;
-				case 'Keyboard':
+				case 'Controle':
 					remove(vpad);
 					vpad.alpha = 0;
 		}
@@ -181,7 +181,7 @@ class AndroidControlsMenu extends MusicBeatState
 			hbox.visible = true;
 		}
 
-		if (daChoice != "Pad-Custom")
+		if (daChoice != "Controle-Customizado")
 		{
 			upPozition.visible = false;
 			downPozition.visible = false;
@@ -200,7 +200,7 @@ class AndroidControlsMenu extends MusicBeatState
 	function trackbutton(touch:flixel.input.touch.FlxTouch){
 		var daChoice:String = controlitems[Math.floor(curSelected)];
 
-		if (daChoice == 'Pad-Custom'){
+		if (daChoice == 'Controle-Customizado'){
 			if (buttonistouched){
 				if (bindbutton.justReleased && touch.justReleased)
 				{
@@ -251,7 +251,7 @@ class AndroidControlsMenu extends MusicBeatState
 		config.setcontrolmode(curSelected);
 		var daChoice:String = controlitems[Math.floor(curSelected)];
 
-		if (daChoice == 'Pad-Custom'){
+		if (daChoice == 'Controle-Customizado'){
 			config.savecustom(vpad);
 		}
 	}
