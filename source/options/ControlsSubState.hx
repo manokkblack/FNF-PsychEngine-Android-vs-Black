@@ -36,31 +36,31 @@ class ControlsSubState extends MusicBeatSubstate {
 	private var bindLength:Int = 0;
 
 	var optionShit:Array<Dynamic> = [
-		['NOTES'],
-		['Left', 'note_left'],
-		['Down', 'note_down'],
-		['Up', 'note_up'],
-		['Right', 'note_right'],
+		['NOTAS'],
+		['Esquerda', 'note_left'],
+		['Baixo', 'note_down'],
+		['Cima', 'note_up'],
+		['Direita', 'note_right'],
 		[''],
 		['UI'],
-		['Left', 'ui_left'],
-		['Down', 'ui_down'],
-		['Up', 'ui_up'],
-		['Right', 'ui_right'],
+		['Esquerda', 'ui_left'],
+		['Baixo', 'ui_down'],
+		['Cima', 'ui_up'],
+		['Direita', 'ui_right'],
 		[''],
 		['Reset', 'reset'],
-		['Accept', 'accept'],
-		['Back', 'back'],
-		['Pause', 'pause'],
+		['Aceitar', 'accept'],
+		['Voltar', 'back'],
+		['Pausar', 'pause'],
 		[''],
 		['VOLUME'],
-		['Mute', 'volume_mute'],
-		['Up', 'volume_up'],
-		['Down', 'volume_down'],
+		['Mutar', 'volume_mute'],
+		['Cima', 'volume_up'],
+		['Baixo', 'volume_down'],
 		[''],
 		['DEBUG'],
-		['Key 1', 'debug_1'],
-		['Key 2', 'debug_2']
+		['Tecla 1', 'debug_1'],
+		['Tecla 2', 'debug_2']
 	];
 
 	private var grpOptions:FlxTypedGroup<Alphabet>;
